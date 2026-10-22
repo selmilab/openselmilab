@@ -1,6 +1,0 @@
-﻿plots.plot\_dry\_adiabats
-=========================
-
-.. currentmodule:: plots
-
-.. autofunction:: plot_dry_adiabats

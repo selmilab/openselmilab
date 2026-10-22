@@ -1,6 +1,0 @@
-﻿slmeteo.thermodynamics.isohume
-==============================
-
-.. currentmodule:: slmeteo.thermodynamics
-
-.. autofunction:: isohume

@@ -1,6 +1,0 @@
-﻿slmeteo.plots.plot\_isohumes
-============================
-
-.. currentmodule:: slmeteo.plots
-
-.. autofunction:: plot_isohumes

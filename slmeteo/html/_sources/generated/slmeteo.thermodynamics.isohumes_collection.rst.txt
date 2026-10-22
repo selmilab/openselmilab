@@ -1,6 +1,0 @@
-﻿slmeteo.thermodynamics.isohumes\_collection
-===========================================
-
-.. currentmodule:: slmeteo.thermodynamics
-
-.. autofunction:: isohumes_collection
