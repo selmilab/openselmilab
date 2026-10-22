@@ -1,0 +1,14 @@
+API
+===
+
+.. autosummary::
+    :toctree: generated
+    :nosignatures:
+    :recursive:
+
+    slmeteo.thermodynamics
+    slmeteo.io
+    slmeteo.plots
+
+
+

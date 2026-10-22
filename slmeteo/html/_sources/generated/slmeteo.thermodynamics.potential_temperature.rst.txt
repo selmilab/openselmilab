@@ -1,0 +1,6 @@
+﻿slmeteo.thermodynamics.potential\_temperature
+=============================================
+
+.. currentmodule:: slmeteo.thermodynamics
+
+.. autofunction:: potential_temperature

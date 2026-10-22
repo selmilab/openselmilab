@@ -1,0 +1,6 @@
+﻿slmeteo
+=======
+
+.. automodule:: slmeteo
+
+   

@@ -1,0 +1,607 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>slmeteo package &mdash; slmeteo 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="shortcut icon" href="_static/slmeteo_favicon_blue.png"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="References" href="references.html" />
+    <link rel="prev" title="API" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #001f3f" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            slmeteo
+              <img src="_static/slmeteo_logo_blue_select_small.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">slmeteo package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-slmeteo.constants">slmeteo.constants module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.constants.EnvironmentalConstants"><code class="docutils literal notranslate"><span class="pre">EnvironmentalConstants</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-slmeteo.io">slmeteo.io module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.io.uow_radiosonde"><code class="docutils literal notranslate"><span class="pre">uow_radiosonde()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-slmeteo.plots">slmeteo.plots module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.plots.Emagram"><code class="docutils literal notranslate"><span class="pre">Emagram</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.plots.SkewT"><code class="docutils literal notranslate"><span class="pre">SkewT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.plots.plot_dry_adiabats"><code class="docutils literal notranslate"><span class="pre">plot_dry_adiabats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.plots.plot_isohumes"><code class="docutils literal notranslate"><span class="pre">plot_isohumes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.plots.plot_isotherms"><code class="docutils literal notranslate"><span class="pre">plot_isotherms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.plots.plot_moist_adiabats"><code class="docutils literal notranslate"><span class="pre">plot_moist_adiabats()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-slmeteo.thermodynamics">slmeteo.thermodynamics module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.dew_point_lapse_rate"><code class="docutils literal notranslate"><span class="pre">dew_point_lapse_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.dry_adiabat"><code class="docutils literal notranslate"><span class="pre">dry_adiabat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.dry_adiabats_collection"><code class="docutils literal notranslate"><span class="pre">dry_adiabats_collection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.eq_clapeyron"><code class="docutils literal notranslate"><span class="pre">eq_clapeyron()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.isohume"><code class="docutils literal notranslate"><span class="pre">isohume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.isohumes_collection"><code class="docutils literal notranslate"><span class="pre">isohumes_collection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.isotherms"><code class="docutils literal notranslate"><span class="pre">isotherms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.moist_adiabat"><code class="docutils literal notranslate"><span class="pre">moist_adiabat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.moist_adiabat_lapse_rate"><code class="docutils literal notranslate"><span class="pre">moist_adiabat_lapse_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.moist_adiabat_lapse_rate_var_cp"><code class="docutils literal notranslate"><span class="pre">moist_adiabat_lapse_rate_var_cp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.moist_adiabats_collection"><code class="docutils literal notranslate"><span class="pre">moist_adiabats_collection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.potential_temperature"><code class="docutils literal notranslate"><span class="pre">potential_temperature()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.precipitable_water"><code class="docutils literal notranslate"><span class="pre">precipitable_water()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.skew_dry_adiabat"><code class="docutils literal notranslate"><span class="pre">skew_dry_adiabat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.skew_dry_adiabats_collection"><code class="docutils literal notranslate"><span class="pre">skew_dry_adiabats_collection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.skew_isohume"><code class="docutils literal notranslate"><span class="pre">skew_isohume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.skew_isohumes_collection"><code class="docutils literal notranslate"><span class="pre">skew_isohumes_collection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.skew_isotherm"><code class="docutils literal notranslate"><span class="pre">skew_isotherm()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.skew_isotherms_collection"><code class="docutils literal notranslate"><span class="pre">skew_isotherms_collection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.skew_moist_adiabat"><code class="docutils literal notranslate"><span class="pre">skew_moist_adiabat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.skew_moist_adiabats_collection"><code class="docutils literal notranslate"><span class="pre">skew_moist_adiabats_collection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.tetens_formula"><code class="docutils literal notranslate"><span class="pre">tetens_formula()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slmeteo.thermodynamics.virtual_potential_temperature"><code class="docutils literal notranslate"><span class="pre">virtual_potential_temperature()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-slmeteo.units">slmeteo.units module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #001f3f" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">slmeteo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">API</a></li>
+      <li class="breadcrumb-item active">slmeteo package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/slmeteo.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="slmeteo-package">
+<h1>slmeteo package<a class="headerlink" href="#slmeteo-package" title="Link to this heading"></a></h1>
+<section id="module-slmeteo.constants">
+<span id="slmeteo-constants-module"></span><h2>slmeteo.constants module<a class="headerlink" href="#module-slmeteo.constants" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">slmeteo.constants.</span></span><span class="sig-name descname"><span class="pre">EnvironmentalConstants</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Immutable class holding physical constants for air and water with pint units.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.Cp_d">
+<span class="sig-name descname"><span class="pre">Cp_d</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(1004.0,</span> <span class="pre">'joule</span> <span class="pre">/</span> <span class="pre">kilogram</span> <span class="pre">/</span> <span class="pre">kelvin')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.Cp_d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.Gamma_d">
+<span class="sig-name descname"><span class="pre">Gamma_d</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(0.00976757968,</span> <span class="pre">'kelvin</span> <span class="pre">/</span> <span class="pre">meter')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.Gamma_d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.Gamma_sa">
+<span class="sig-name descname"><span class="pre">Gamma_sa</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(0.0065,</span> <span class="pre">'kelvin</span> <span class="pre">/</span> <span class="pre">meter')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.Gamma_sa" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.L_v">
+<span class="sig-name descname"><span class="pre">L_v</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(2500000.0,</span> <span class="pre">'joule</span> <span class="pre">/</span> <span class="pre">kilogram')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.L_v" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.M_d">
+<span class="sig-name descname"><span class="pre">M_d</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(0.02897,</span> <span class="pre">'kilogram</span> <span class="pre">/</span> <span class="pre">mole')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.M_d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.M_w">
+<span class="sig-name descname"><span class="pre">M_w</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(0.018015,</span> <span class="pre">'kilogram</span> <span class="pre">/</span> <span class="pre">mole')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.M_w" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.R">
+<span class="sig-name descname"><span class="pre">R</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(8.314,</span> <span class="pre">'joule</span> <span class="pre">/</span> <span class="pre">kelvin</span> <span class="pre">/</span> <span class="pre">mole')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.R" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.R_d">
+<span class="sig-name descname"><span class="pre">R_d</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(286.986538,</span> <span class="pre">'joule</span> <span class="pre">/</span> <span class="pre">kelvin</span> <span class="pre">/</span> <span class="pre">kilogram')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.R_d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.R_v">
+<span class="sig-name descname"><span class="pre">R_v</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(461.504302,</span> <span class="pre">'joule</span> <span class="pre">/</span> <span class="pre">kelvin</span> <span class="pre">/</span> <span class="pre">kilogram')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.R_v" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.T_0">
+<span class="sig-name descname"><span class="pre">T_0</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(273.15,</span> <span class="pre">'kelvin')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.T_0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.e_0">
+<span class="sig-name descname"><span class="pre">e_0</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(611.3,</span> <span class="pre">'pascal')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.e_0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.earth_gravity">
+<span class="sig-name descname"><span class="pre">earth_gravity</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(9.80665,</span> <span class="pre">'meter</span> <span class="pre">/</span> <span class="pre">second</span> <span class="pre">**</span> <span class="pre">2')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.earth_gravity" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.epsilon">
+<span class="sig-name descname"><span class="pre">epsilon</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(0.622,</span> <span class="pre">'dimensionless')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.epsilon" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.constants.EnvironmentalConstants.w_d">
+<span class="sig-name descname"><span class="pre">w_d</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(1000.0,</span> <span class="pre">'kilogram</span> <span class="pre">/</span> <span class="pre">meter</span> <span class="pre">**</span> <span class="pre">3')&gt;</span></span><a class="headerlink" href="#slmeteo.constants.EnvironmentalConstants.w_d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-slmeteo.io">
+<span id="slmeteo-io-module"></span><h2>slmeteo.io module<a class="headerlink" href="#module-slmeteo.io" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.io.uow_radiosonde">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.io.</span></span><span class="sig-name descname"><span class="pre">uow_radiosonde</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dataframe'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.io.uow_radiosonde" title="Link to this definition"></a></dt>
+<dd><p>This function builds the url and send the request for a radiosonde to the
+University of Wyoming Atmospheric Science Radiosonde Archive. The
+input parameters are:</p>
+<ol class="arabic simple">
+<li><p>station id, a number</p></li>
+<li><p>the day of the radiosonde in the yyyy-mm-dd format</p></li>
+<li><p>the launch hour (e.g. 0 for midnight and 12 for midday)</p></li>
+</ol>
+<p>Depending on the requested format the result can be a Pandas dataframe
+containing the full dataset or an ordered list of NumPy arrays for
+pressure (Pa), temperature (K), dew point (K), mixing ratio (g/kg)</p>
+</dd></dl>
+
+</section>
+<section id="module-slmeteo.plots">
+<span id="slmeteo-plots-module"></span><h2>slmeteo.plots module<a class="headerlink" href="#module-slmeteo.plots" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="slmeteo.plots.Emagram">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">slmeteo.plots.</span></span><span class="sig-name descname"><span class="pre">Emagram</span></span><a class="headerlink" href="#slmeteo.plots.Emagram" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class draws humidity and dry and moist adiabats as baselines for an emagram.
+A user can plot a radiosonde on top of the baselines.
+:meta hide-value:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.Emagram.T_i">
+<span class="sig-name descname"><span class="pre">T_i</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity([213.15</span> <span class="pre">223.15</span> <span class="pre">233.15</span> <span class="pre">243.15</span> <span class="pre">253.15</span> <span class="pre">263.15</span> <span class="pre">273.15</span> <span class="pre">283.15</span> <span class="pre">293.15</span> <span class="pre">303.15</span>&#160; <span class="pre">313.15</span> <span class="pre">323.15</span> <span class="pre">333.15],</span> <span class="pre">'kelvin')&gt;</span></span><a class="headerlink" href="#slmeteo.plots.Emagram.T_i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.Emagram.num_levels">
+<span class="sig-name descname"><span class="pre">num_levels</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">500</span></span><a class="headerlink" href="#slmeteo.plots.Emagram.num_levels" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.Emagram.p_ground">
+<span class="sig-name descname"><span class="pre">p_ground</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(100000,</span> <span class="pre">'pascal')&gt;</span></span><a class="headerlink" href="#slmeteo.plots.Emagram.p_ground" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.Emagram.p_top">
+<span class="sig-name descname"><span class="pre">p_top</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(10000,</span> <span class="pre">'pascal')&gt;</span></span><a class="headerlink" href="#slmeteo.plots.Emagram.p_top" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slmeteo.plots.Emagram.plot_baselines">
+<span class="sig-name descname"><span class="pre">plot_baselines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.plots.Emagram.plot_baselines" title="Link to this definition"></a></dt>
+<dd><p>This method plots the isohumes and the dry and moist
+adiabats of the emagram.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slmeteo.plots.Emagram.plot_radiosonde">
+<span class="sig-name descname"><span class="pre">plot_radiosonde</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rs_pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rs_temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rs_dew_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_diagram</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.plots.Emagram.plot_radiosonde" title="Link to this definition"></a></dt>
+<dd><p>This method plots a radiosonde, atmospheric temperature and dew point, on an emagram.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.Emagram.pressure_levels">
+<span class="sig-name descname"><span class="pre">pressure_levels</span></span><a class="headerlink" href="#slmeteo.plots.Emagram.pressure_levels" title="Link to this definition"></a></dt>
+<dd><p>array of pressure values from 100k Pa to 10k Pa
+:meta hide-value:</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.Emagram.r_s">
+<span class="sig-name descname"><span class="pre">r_s</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([0.0001,</span> <span class="pre">0.0002,</span> <span class="pre">0.0005,</span> <span class="pre">0.001</span> <span class="pre">,</span> <span class="pre">0.002</span> <span class="pre">,</span> <span class="pre">0.005</span> <span class="pre">,</span> <span class="pre">0.01</span>&#160; <span class="pre">,</span> <span class="pre">0.02</span>&#160; <span class="pre">,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.05</span>&#160; <span class="pre">])</span></span><a class="headerlink" href="#slmeteo.plots.Emagram.r_s" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.Emagram.t_i">
+<span class="sig-name descname"><span class="pre">t_i</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity([-60</span> <span class="pre">-50</span> <span class="pre">-40</span> <span class="pre">-30</span> <span class="pre">-20</span> <span class="pre">-10</span>&#160;&#160; <span class="pre">0</span>&#160; <span class="pre">10</span>&#160; <span class="pre">20</span>&#160; <span class="pre">30</span>&#160; <span class="pre">40</span>&#160; <span class="pre">50</span>&#160; <span class="pre">60],</span> <span class="pre">'degree_Celsius')&gt;</span></span><a class="headerlink" href="#slmeteo.plots.Emagram.t_i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="slmeteo.plots.SkewT">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">slmeteo.plots.</span></span><span class="sig-name descname"><span class="pre">SkewT</span></span><a class="headerlink" href="#slmeteo.plots.SkewT" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class draws skewed humidity and dry and moist adiabats as baselines for a Skew-T log-p diagram.
+A user can plot a radiosonde on top of the baselines. The radiosonde is skewed as well before being
+drawn on the skew-T diagram.
+:meta hide-value:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.SkewT.T_i">
+<span class="sig-name descname"><span class="pre">T_i</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity([213.15</span> <span class="pre">223.15</span> <span class="pre">233.15</span> <span class="pre">243.15</span> <span class="pre">253.15</span> <span class="pre">263.15</span> <span class="pre">273.15</span> <span class="pre">283.15</span> <span class="pre">293.15</span> <span class="pre">303.15</span>&#160; <span class="pre">313.15</span> <span class="pre">323.15</span> <span class="pre">333.15],</span> <span class="pre">'kelvin')&gt;</span></span><a class="headerlink" href="#slmeteo.plots.SkewT.T_i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.SkewT.num_levels">
+<span class="sig-name descname"><span class="pre">num_levels</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">500</span></span><a class="headerlink" href="#slmeteo.plots.SkewT.num_levels" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.SkewT.p_ground">
+<span class="sig-name descname"><span class="pre">p_ground</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(100000,</span> <span class="pre">'pascal')&gt;</span></span><a class="headerlink" href="#slmeteo.plots.SkewT.p_ground" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.SkewT.p_top">
+<span class="sig-name descname"><span class="pre">p_top</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity(10000,</span> <span class="pre">'pascal')&gt;</span></span><a class="headerlink" href="#slmeteo.plots.SkewT.p_top" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slmeteo.plots.SkewT.plot_baselines">
+<span class="sig-name descname"><span class="pre">plot_baselines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.plots.SkewT.plot_baselines" title="Link to this definition"></a></dt>
+<dd><p>This method plots the isohumes and the dry and moist
+adiabats of the skew-T diagram.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slmeteo.plots.SkewT.plot_radiosonde">
+<span class="sig-name descname"><span class="pre">plot_radiosonde</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rs_pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rs_temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rs_dew_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_diagram</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.plots.SkewT.plot_radiosonde" title="Link to this definition"></a></dt>
+<dd><p>This method plots a radiosonde, atmospheric temperature and dew point, on a skew-T diagram.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.SkewT.pressure_levels">
+<span class="sig-name descname"><span class="pre">pressure_levels</span></span><a class="headerlink" href="#slmeteo.plots.SkewT.pressure_levels" title="Link to this definition"></a></dt>
+<dd><p>array of pressure values from 100k Pa to 10k Pa
+:meta hide-value:</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.SkewT.r_s">
+<span class="sig-name descname"><span class="pre">r_s</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([0.0001,</span> <span class="pre">0.0002,</span> <span class="pre">0.0005,</span> <span class="pre">0.001</span> <span class="pre">,</span> <span class="pre">0.002</span> <span class="pre">,</span> <span class="pre">0.005</span> <span class="pre">,</span> <span class="pre">0.01</span>&#160; <span class="pre">,</span> <span class="pre">0.02</span>&#160; <span class="pre">,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.05</span>&#160; <span class="pre">])</span></span><a class="headerlink" href="#slmeteo.plots.SkewT.r_s" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slmeteo.plots.SkewT.skew_radiosonde_dew_point">
+<span class="sig-name descname"><span class="pre">skew_radiosonde_dew_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rs_pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rs_dew_point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.plots.SkewT.skew_radiosonde_dew_point" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slmeteo.plots.SkewT.skew_radiosonde_temperature">
+<span class="sig-name descname"><span class="pre">skew_radiosonde_temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rs_pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rs_temperature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.plots.SkewT.skew_radiosonde_temperature" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="slmeteo.plots.SkewT.t_i">
+<span class="sig-name descname"><span class="pre">t_i</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Quantity([-60</span> <span class="pre">-50</span> <span class="pre">-40</span> <span class="pre">-30</span> <span class="pre">-20</span> <span class="pre">-10</span>&#160;&#160; <span class="pre">0</span>&#160; <span class="pre">10</span>&#160; <span class="pre">20</span>&#160; <span class="pre">30</span>&#160; <span class="pre">40</span>&#160; <span class="pre">50</span>&#160; <span class="pre">60],</span> <span class="pre">'degree_Celsius')&gt;</span></span><a class="headerlink" href="#slmeteo.plots.SkewT.t_i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.plots.plot_dry_adiabats">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.plots.</span></span><span class="sig-name descname"><span class="pre">plot_dry_adiabats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_adiabats</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.plots.plot_dry_adiabats" title="Link to this definition"></a></dt>
+<dd><p>This function draws a set of dry adiabats
+passed as input.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.plots.plot_isohumes">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.plots.</span></span><span class="sig-name descname"><span class="pre">plot_isohumes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isohumes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.plots.plot_isohumes" title="Link to this definition"></a></dt>
+<dd><p>This function draws a set of isohumes
+passed as argument.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.plots.plot_isotherms">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.plots.</span></span><span class="sig-name descname"><span class="pre">plot_isotherms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isotherms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.plots.plot_isotherms" title="Link to this definition"></a></dt>
+<dd><p>This function draws a set of isotherms passed as argument.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.plots.plot_moist_adiabats">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.plots.</span></span><span class="sig-name descname"><span class="pre">plot_moist_adiabats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_adiabats</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.plots.plot_moist_adiabats" title="Link to this definition"></a></dt>
+<dd><p>This function draws a set of the moist
+adiabats passed as argument.</p>
+</dd></dl>
+
+</section>
+<section id="module-slmeteo.thermodynamics">
+<span id="slmeteo-thermodynamics-module"></span><h2>slmeteo.thermodynamics module<a class="headerlink" href="#module-slmeteo.thermodynamics" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.dew_point_lapse_rate">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">dew_point_lapse_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_dew0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.dew_point_lapse_rate" title="Link to this definition"></a></dt>
+<dd><p>Calculates the dew point lapse rate given the temperature
+and the dew point at the ground level.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.dry_adiabat">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">dry_adiabat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.dry_adiabat" title="Link to this definition"></a></dt>
+<dd><p>This function computes a dry adiabat starting from the temperature at ground
+level T_i (K). The pressure levels are in Pa. The returned values are in Kelvin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.dry_adiabats_collection">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">dry_adiabats_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.dry_adiabats_collection" title="Link to this definition"></a></dt>
+<dd><p>This function computes the dry adiabats starting from the temperatures at ground
+level T_i (K). The pressure levels are in Pa. The returned values are in Kelvin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.eq_clapeyron">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">eq_clapeyron</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.eq_clapeyron" title="Link to this definition"></a></dt>
+<dd><p>This function calculates the saturation water vapour pressure
+from the temperature given in Kelvin using the
+Clausius-Clapeyron equation. The return values are in Pa.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.isohume">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">isohume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.isohume" title="Link to this definition"></a></dt>
+<dd><p>This function computes the isohume corresponding to the
+mixing ratios passed as argument. The returned values
+are in Kelvin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.isohumes_collection">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">isohumes_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_s_array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.isohumes_collection" title="Link to this definition"></a></dt>
+<dd><p>This function computes the isohumes corresponding to the
+mixing ratios passed as argument. The returned values
+are in Kelvin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.isotherms">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">isotherms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.isotherms" title="Link to this definition"></a></dt>
+<dd><p>This function computes a isotherms given the starting
+temperatures at ground level and the pressure levels in Pa.
+The returned values are in Kelvin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.moist_adiabat">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">moist_adiabat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.moist_adiabat" title="Link to this definition"></a></dt>
+<dd><p>This function computes the moist (saturated) pseudo-adiabat starting from
+the input temperature (Kelvin). The input temperature is
+a scalar value. The returned values are in Kelvin. The
+calculation of the moist adiabats is more precise as the
+smaller is the delta between two pressure levels or, in
+other words, the more levels are used for the computation
+between the ground and the top level pressure.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.moist_adiabat_lapse_rate">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">moist_adiabat_lapse_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.moist_adiabat_lapse_rate" title="Link to this definition"></a></dt>
+<dd><p>This function calculates the moist adiabatic lapse rate
+from pressure and temperature. The input temperature is in K
+and the input pressure is in Pa. The return value is in K/Pa</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.moist_adiabat_lapse_rate_var_cp">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">moist_adiabat_lapse_rate_var_cp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.moist_adiabat_lapse_rate_var_cp" title="Link to this definition"></a></dt>
+<dd><p>This function calculates the moist adiabatic lapse
+rate taking into account that the specific heat at
+constant pressure depends on the water vapor mixing
+ratio (Stull ch.3. eq. 3.3)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.moist_adiabats_collection">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">moist_adiabats_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.moist_adiabats_collection" title="Link to this definition"></a></dt>
+<dd><p>This function computes a set of moist adiabats
+from an array of initial temperatures.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.potential_temperature">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">potential_temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.potential_temperature" title="Link to this definition"></a></dt>
+<dd><p>This function computes the potential temperature. The formula used
+depends on the type of unit that represent the height of the parcel.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.precipitable_water">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">precipitable_water</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mixing_ratio</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.precipitable_water" title="Link to this definition"></a></dt>
+<dd><p>Calculates the precipitable water, or Total Column Water Vapor,
+from the pressure and the mixing ratio profiles</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.skew_dry_adiabat">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">skew_dry_adiabat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.skew_dry_adiabat" title="Link to this definition"></a></dt>
+<dd><p>This function computes a skew dry adiabat starting from an initial
+potential temperature. The input pressure levels are in Pa and the
+potential temperature in Kelvin. The returned temperatures are in
+Kelvin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.skew_dry_adiabats_collection">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">skew_dry_adiabats_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'kelvin'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.skew_dry_adiabats_collection" title="Link to this definition"></a></dt>
+<dd><p>This function computes the dry adiabats starting from the temperatures at ground
+level T_i (K). The pressure levels are in Pa. The returned values are in Kelvin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.skew_isohume">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">skew_isohume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mixing_ratio</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.skew_isohume" title="Link to this definition"></a></dt>
+<dd><p>This function computes the skewed isohume corresponding to the
+mixing ratio passed as argument. The returned values
+are in K.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.skew_isohumes_collection">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">skew_isohumes_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mixing_ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'kelvin'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.skew_isohumes_collection" title="Link to this definition"></a></dt>
+<dd><p>This function computes the dry adiabats starting from the temperatures at ground
+level T_i (K). The pressure levels are in Pa. The returned values are in Kelvin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.skew_isotherm">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">skew_isotherm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skewness_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">35</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.skew_isotherm" title="Link to this definition"></a></dt>
+<dd><p>This function computes a skewed isotherm given the starting
+temperature at ground level and the pressure levels in Pa.
+The returned values are in Kelvin. The default skewness factor
+is set to 35°C.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.skew_isotherms_collection">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">skew_isotherms_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'kelvin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skewness_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">35</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.skew_isotherms_collection" title="Link to this definition"></a></dt>
+<dd><p>This function computes a isotherms given the starting
+temperatures at ground level and the pressure levels in Pa.
+The returned values are in Kelvin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.skew_moist_adiabat">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">skew_moist_adiabat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.skew_moist_adiabat" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.skew_moist_adiabats_collection">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">skew_moist_adiabats_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'kelvin'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.skew_moist_adiabats_collection" title="Link to this definition"></a></dt>
+<dd><p>This function computes the dry adiabats starting from the temperatures at ground
+level T_i (K). The pressure levels are in Pa. The returned values are in Kelvin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.tetens_formula">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">tetens_formula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.tetens_formula" title="Link to this definition"></a></dt>
+<dd><p>This function computes the satureted water vapor pressure
+for a temperature range between 0°C and 50°C using the Tetens’
+formula (see Stull eq. 4.2).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="slmeteo.thermodynamics.virtual_potential_temperature">
+<span class="sig-prename descclassname"><span class="pre">slmeteo.thermodynamics.</span></span><span class="sig-name descname"><span class="pre">virtual_potential_temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slmeteo.thermodynamics.virtual_potential_temperature" title="Link to this definition"></a></dt>
+<dd><p>Virtual potential temperature (Stull, ch.3, p.61, eq.3.13)</p>
+</dd></dl>
+
+</section>
+<section id="module-slmeteo.units">
+<span id="slmeteo-units-module"></span><h2>slmeteo.units module<a class="headerlink" href="#module-slmeteo.units" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="references.html" class="btn btn-neutral float-right" title="References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Luigi Selmi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

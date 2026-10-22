@@ -1,0 +1,6 @@
+﻿slmeteo.plots.plot\_dry\_adiabats
+=================================
+
+.. currentmodule:: slmeteo.plots
+
+.. autofunction:: plot_dry_adiabats

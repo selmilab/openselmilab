@@ -1,0 +1,44 @@
+slmeteo package
+===============
+
+
+slmeteo.constants module
+------------------------
+
+.. automodule:: slmeteo.constants
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+slmeteo.io module
+-----------------
+
+.. automodule:: slmeteo.io
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+slmeteo.plots module
+--------------------
+
+.. automodule:: slmeteo.plots
+   :members:
+   :show-inheritance:
+   :undoc-members: Emagram.pressure_levels
+
+slmeteo.thermodynamics module
+-----------------------------
+
+.. automodule:: slmeteo.thermodynamics
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+slmeteo.units module
+--------------------
+
+.. automodule:: slmeteo.units
+   :members:
+   :show-inheritance:
+   :undoc-members:
+

@@ -1,0 +1,6 @@
+﻿slmeteo.plots.SkewT.plot\_radiosonde
+====================================
+
+.. currentmodule:: slmeteo.plots
+
+.. automethod:: SkewT.plot_radiosonde
