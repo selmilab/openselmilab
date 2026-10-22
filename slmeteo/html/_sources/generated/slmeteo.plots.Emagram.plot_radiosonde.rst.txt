@@ -1,6 +1,0 @@
-﻿slmeteo.plots.Emagram.plot\_radiosonde
-======================================
-
-.. currentmodule:: slmeteo.plots
-
-.. automethod:: Emagram.plot_radiosonde

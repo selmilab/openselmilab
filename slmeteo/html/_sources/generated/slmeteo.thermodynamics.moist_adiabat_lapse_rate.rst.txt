@@ -1,6 +1,0 @@
-﻿slmeteo.thermodynamics.moist\_adiabat\_lapse\_rate
-==================================================
-
-.. currentmodule:: slmeteo.thermodynamics
-
-.. autofunction:: moist_adiabat_lapse_rate

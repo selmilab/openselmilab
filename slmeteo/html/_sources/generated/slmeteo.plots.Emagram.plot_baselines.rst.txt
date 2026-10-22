@@ -1,6 +1,0 @@
-﻿slmeteo.plots.Emagram.plot\_baselines
-=====================================
-
-.. currentmodule:: slmeteo.plots
-
-.. automethod:: Emagram.plot_baselines

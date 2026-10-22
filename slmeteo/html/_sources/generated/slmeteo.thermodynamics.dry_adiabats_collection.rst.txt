@@ -1,6 +1,0 @@
-﻿slmeteo.thermodynamics.dry\_adiabats\_collection
-================================================
-
-.. currentmodule:: slmeteo.thermodynamics
-
-.. autofunction:: dry_adiabats_collection

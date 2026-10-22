@@ -1,6 +1,0 @@
-﻿slmeteo.thermodynamics.skew\_isohume
-====================================
-
-.. currentmodule:: slmeteo.thermodynamics
-
-.. autofunction:: skew_isohume

@@ -1,6 +1,0 @@
-﻿slmeteo.io.uow\_radiosonde
-==========================
-
-.. currentmodule:: slmeteo.io
-
-.. autofunction:: uow_radiosonde

@@ -1,6 +1,0 @@
-﻿slmeteo.thermodynamics.eq\_clapeyron
-====================================
-
-.. currentmodule:: slmeteo.thermodynamics
-
-.. autofunction:: eq_clapeyron

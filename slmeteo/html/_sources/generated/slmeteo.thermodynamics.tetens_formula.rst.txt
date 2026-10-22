@@ -1,6 +1,0 @@
-﻿slmeteo.thermodynamics.tetens\_formula
-======================================
-
-.. currentmodule:: slmeteo.thermodynamics
-
-.. autofunction:: tetens_formula

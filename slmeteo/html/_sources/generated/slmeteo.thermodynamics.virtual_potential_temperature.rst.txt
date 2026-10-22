@@ -1,6 +1,0 @@
-﻿slmeteo.thermodynamics.virtual\_potential\_temperature
-======================================================
-
-.. currentmodule:: slmeteo.thermodynamics
-
-.. autofunction:: virtual_potential_temperature
