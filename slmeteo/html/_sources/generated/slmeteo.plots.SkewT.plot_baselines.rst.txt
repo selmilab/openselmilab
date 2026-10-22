@@ -1,0 +1,6 @@
+﻿slmeteo.plots.SkewT.plot\_baselines
+===================================
+
+.. currentmodule:: slmeteo.plots
+
+.. automethod:: SkewT.plot_baselines

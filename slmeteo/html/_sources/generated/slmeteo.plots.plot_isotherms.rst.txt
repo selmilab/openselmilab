@@ -1,0 +1,6 @@
+﻿slmeteo.plots.plot\_isotherms
+=============================
+
+.. currentmodule:: slmeteo.plots
+
+.. autofunction:: plot_isotherms

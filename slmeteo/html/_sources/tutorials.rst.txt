@@ -1,0 +1,30 @@
+Tutorials
+=========
+
+Lifting Condensation Level
+--------------------------
+The lifting condensation level (LCL) is the height (or pressure) to which an air parcel must be lifted through a dry adiabatic process so that its relative humidity reaches 100% and the condensation process can start. The LCL is at the clouds base.
+
+.. toctree::
+   :maxdepth: 2
+
+   lifting_condensation_level    
+
+
+.. _Thermodiagrams:
+
+Thermodiagrams
+--------------
+Thermodynamic diagrams, such as emagrams and skew-T, are used by meteorologists for weather analysis and forecasting. Isopleths included in a thermo diagram are: isobars, isotherms, dry adiabats, moist adiabats, and isohumes. Two classes, ``Emagram`` and ``SkewT``, implemented in the ``plots`` module can be used to create an emagram or a skew-T diagram and also to add a radiosonde profile on top of it. A radiosonde contains the data about the temperature profile of the atmosphere, the dew point, the wind speed and direction. The temperature profile is used to infer the stability of the atmosphere: the inversion layers, the level of water vapor condensation and, together with the wind profile and a terrain model, to estimate the amount og water available for precipitation. The emagrams and skew-Ts are semilogarithmic diagrams and together with the pressure levels they contain some baselines calculated from the theory and based on some assumptions such as the hydrostatic equilibrium of the atmosphere and adiabatic processes for an air parcel rising of sinking through the atmosphere:
+
+* Dry adiabats (solid orange) 
+* Moist adiabats (dashed orange)
+* Isohumes (dotted blue dotted)
+* Isotherms: (solid green)
+
+
+.. toctree::
+   :maxdepth: 2
+    
+   emagram
+   skewT

@@ -1,0 +1,6 @@
+﻿slmeteo.thermodynamics.skew\_moist\_adiabats\_collection
+========================================================
+
+.. currentmodule:: slmeteo.thermodynamics
+
+.. autofunction:: skew_moist_adiabats_collection

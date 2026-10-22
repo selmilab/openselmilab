@@ -1,0 +1,24 @@
+slmeteo
+========
+
+slmeteo is a Python package for meteorology and weather forecasting. The aim of the project is to implement the concepts and processes used in meteorology as classes and functions using the Python programming language. Since the goal is quite challenging the approach is to split the field into its three main components:
+
+* Atmospheric Thermodynamics
+* Radiative Transfer
+* Geophysical Fluid Dynamics
+
+The current version 0.1 implements only the basic concepts and functions for atmospheric thermodynamics. The package has four main modules: ``constants``, ``io``, ``thermodynamics``, and ``plots``. The ``constants`` module is implemented as a Python dataclass object and contains the definition of some common thermodynamic constants, such as the ideal gas constant. All the constants are defined with their physical unit. The ``io`` module is a collection of functions to fetch radiosonde data. For the time being only the radiosonde from the University of Wyoming are used. The ``thermodynamics`` module is a collection of functions that represent the status of the atmosphere and the processes known to be followed by air parcels while rising or sinking in the atmosphere. The ``plots`` module provides classes and methods to plot two types of thermodynamic diagrams: emagrams and skew-T log-p. These diagrams are built from a set of baselines that represent the status of the atmosphere, that is pressure, temperature and humidity, and the processes that an air parcel can follow depending on its humidity content. On top of these diagrams the user can plot a radiosonde in order to asses the stability of the atmosphere or calculate the lifting condensation level of an air parcel.  
+
+.. note::
+
+   This project is under active development.
+
+.. toctree::
+   :maxdepth: 2
+
+   installation
+   tutorials
+   modules
+   references
+
+   

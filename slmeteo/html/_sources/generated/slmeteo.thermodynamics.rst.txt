@@ -1,0 +1,34 @@
+﻿slmeteo.thermodynamics
+======================
+
+.. automodule:: slmeteo.thermodynamics
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      dew_point_lapse_rate
+      dry_adiabat
+      dry_adiabats_collection
+      eq_clapeyron
+      isohume
+      isohumes_collection
+      isotherms
+      moist_adiabat
+      moist_adiabat_lapse_rate
+      moist_adiabat_lapse_rate_var_cp
+      moist_adiabats_collection
+      potential_temperature
+      precipitable_water
+      skew_dry_adiabat
+      skew_dry_adiabats_collection
+      skew_isohume
+      skew_isohumes_collection
+      skew_isotherm
+      skew_isotherms_collection
+      skew_moist_adiabat
+      skew_moist_adiabats_collection
+      tetens_formula
+      virtual_potential_temperature
+   

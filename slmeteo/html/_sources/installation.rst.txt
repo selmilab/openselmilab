@@ -1,0 +1,15 @@
+Installation
+============
+
+.. toctree::
+   :maxdepth: 2
+
+Install the latest release with Python >= 3.12.5 and pip as follows:
+
+.. code:: bash
+
+    $ pip install sl-meteo
+
+
+
+

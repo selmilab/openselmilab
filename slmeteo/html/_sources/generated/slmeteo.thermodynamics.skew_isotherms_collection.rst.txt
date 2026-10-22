@@ -1,0 +1,6 @@
+﻿slmeteo.thermodynamics.skew\_isotherms\_collection
+==================================================
+
+.. currentmodule:: slmeteo.thermodynamics
+
+.. autofunction:: skew_isotherms_collection

@@ -1,0 +1,5 @@
+Emagram
+-------
+An emagram is a diagram with the temperature as the x axis and the logarithm of pressure as the y axis. The humidity is also added to it even if it can be calculated from the pressure for a set of temperature. The state of the atmosphere is represented as a pair (p, T) in the diagram. A set of dry and moist adiabats are added to the diagram to figure out the processes that can be followed by an air parcel depending on its water vapor content.     
+
+.. image:: ../../images/emagram.jpg
